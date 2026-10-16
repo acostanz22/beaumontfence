@@ -1,0 +1,56 @@
+---
+import { businessName, normalizePath, phoneDisplay } from "../data/site";
+import { services } from "../data/services";
+
+interface Props {
+  path: string;
+}
+const { path } = Astro.props;
+const current = normalizePath(path);
+
+function here(href: string) {
+  return normalizePath(href) === current ? "page" : undefined;
+}
+---
+
+<div class="topbar">
+  <div class="wrap">
+    <span>Beaumont, TX</span>
+    <a href="tel:+14092546532">{phoneDisplay}</a>
+  </div>
+</div>
+<header class="header">
+  <div class="wrap">
+    <a class="logo" href="/" aria-label={`${businessName} home`}>
+      <svg viewBox="0 0 48 48" aria-hidden="true">
+        <rect width="48" height="48" rx="10" fill="#1B4332"></rect>
+        <path d="M8 38V20l5-7 5 7v18" stroke="#F3EDE3" stroke-width="2.4" stroke-linejoin="round"></path>
+        <path d="M19 38V16l5-7 5 7v22" stroke="#F3EDE3" stroke-width="2.4" stroke-linejoin="round"></path>
+        <path d="M30 38V22l5-7 5 7v16" stroke="#F3EDE3" stroke-width="2.4" stroke-linejoin="round"></path>
+        <path d="M7 38h34" stroke="#E07A3D" stroke-width="2.4" stroke-linecap="round"></path>
+      </svg>
+      <span class="logo-text">
+        <strong>JD's</strong>
+        <span>Fence Co.</span>
+      </span>
+    </a>
+    <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav" data-nav-toggle>
+      Menu
+    </button>
+    <nav id="site-nav" class="nav" data-nav aria-label="Primary">
+      <a href="/" aria-current={here("/")}>Home</a>
+      <div class="drop">
+        <a href="/services.html" aria-current={here("/services.html")}>Services</a>
+        <div class="sub">
+          {services.map((service) => (
+            <a href={`/${service.slug}.html`} aria-current={here(`/${service.slug}.html`)}>{service.name}</a>
+          ))}
+        </div>
+      </div>
+      <a href="/about.html" aria-current={here("/about.html")}>About</a>
+      <a href="/service-areas.html" aria-current={here("/service-areas.html")}>Service Areas</a>
+      <a href="/contact.html" aria-current={here("/contact.html")}>Contact</a>
+    </nav>
+    <a class="btn header-cta" href="tel:+14092546532">Call {phoneDisplay}</a>
+  </div>
+</header>

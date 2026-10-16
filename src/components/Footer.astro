@@ -1,0 +1,39 @@
+---
+import { businessName, phoneDisplay } from "../data/site";
+import { services } from "../data/services";
+---
+
+<footer class="footer">
+  <div class="wrap footer-grid">
+    <div>
+      <h2>Company</h2>
+      <ul>
+        <li><a href="/about.html">About</a></li>
+        <li><a href="/contact.html">Contact</a></li>
+        <li><a href="/service-areas.html">Service Areas</a></li>
+        <li><a href="tel:+14092546532">{phoneDisplay}</a></li>
+      </ul>
+    </div>
+    <div>
+      <h2>Services</h2>
+      <ul>
+        {services.map((service) => (
+          <li><a href={`/${service.slug}.html`}>{service.name}</a></li>
+        ))}
+      </ul>
+    </div>
+    <div>
+      <h2>Quick Links</h2>
+      <ul>
+        <li><a href="/">Home</a></li>
+        <li><a href="/services.html">All services</a></li>
+        <li><a href="/contact.html#quote">Free quote</a></li>
+        <li><a href="/service-areas.html">Areas we serve</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="wrap legal">
+    <p>{businessName} · Beaumont, TX · <a href="tel:+14092546532">{phoneDisplay}</a></p>
+    <p>Fence installation for homes, commercial lots, and acreage. Service-area company. No walk-in showroom.</p>
+  </div>
+</footer>

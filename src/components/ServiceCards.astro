@@ -1,0 +1,18 @@
+---
+import { services } from "../data/services";
+---
+
+<ul class="service-grid">
+  {services.map((service) => (
+    <li>
+      <a class="service-card" href={`/${service.slug}.html`}>
+        <img src={service.image} alt={service.imageAlt} width={service.width} height={service.height} />
+        <div class="service-card-body">
+          <h3>{service.name}</h3>
+          <p>{service.card}</p>
+          <span class="more">View {service.name}</span>
+        </div>
+      </a>
+    </li>
+  ))}
+</ul>

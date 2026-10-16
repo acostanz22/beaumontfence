@@ -1,0 +1,95 @@
+---
+import Base from "../layouts/Base.astro";
+import FaqList from "./FaqList.astro";
+import { pageSchema } from "../data/schema";
+import { phoneDisplay } from "../data/site";
+import { locations, type Location } from "../data/locations";
+
+interface Props {
+  location: Location;
+}
+const { location } = Astro.props;
+const path = `/${location.slug}.html`;
+const crumbs = [
+  { name: "Home", path: "/" },
+  { name: "Service Areas", path: "/service-areas.html" },
+  { name: location.city, path },
+];
+const schema = pageSchema({
+  path,
+  title: location.title,
+  description: location.description,
+  crumbs,
+  faqs: location.faqs,
+});
+const nearby = location.nearby
+  .map((slug) => locations.find((item) => item.slug === slug))
+  .filter((item): item is Location => Boolean(item));
+---
+
+<Base title={location.title} description={location.description} path={path} schema={schema} crumbs={crumbs}>
+  <section class="page-hero">
+    <div class="wrap">
+      <p class="eyebrow">{location.county}, Texas</p>
+      <h1>{location.h1}</h1>
+      <p class="lede">{location.intro}</p>
+      <div class="actions">
+        <a class="btn btn-dark" href="tel:+14092546532">Call {phoneDisplay}</a>
+        <a class="btn btn-ghost" href="/contact.html#quote">Request a free quote</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="wrap narrow">
+      <h2>Fence work in {location.city}</h2>
+      {location.points.map((point) => <p>{point}</p>)}
+    </div>
+  </section>
+
+  <section class="section band">
+    <div class="wrap">
+      <h2>Materials that fit these lots</h2>
+      <ul class="fit-grid">
+        {location.fits.map((fit) => (
+          <li>
+            <a class="fit-card" href={fit.href} style="display:block; text-decoration:none; color:inherit;">
+              <h3>{fit.label}</h3>
+              <p>{fit.note}</p>
+              <span class="more">View service</span>
+            </a>
+          </li>
+        ))}
+      </ul>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="wrap narrow">
+      <h2>Local rule to check first</h2>
+      <p>{location.rule}</p>
+    </div>
+  </section>
+
+  <FaqList faqs={location.faqs} heading={`Questions about fencing in ${location.city}`} />
+
+  <section class="section" style="padding-top: 0;">
+    <div class="wrap">
+      <h2>Nearby areas</h2>
+      <ul class="related">
+        {nearby.map((item) => (
+          <li><a href={`/${item.slug}.html`}>{item.city}</a></li>
+        ))}
+        <li><a href="/service-areas.html">All service areas</a></li>
+      </ul>
+      <div class="final" style="margin-top: 1.5rem;">
+        <h2>Get a {location.city} fence estimate</h2>
+        <p>Call {phoneDisplay} or send the quote form with the address and an approximate length.</p>
+        <div class="actions">
+          <a class="btn" href="/contact.html#quote">Request a free quote</a>
+          <a class="btn btn-line" href="tel:+14092546532">Call {phoneDisplay}</a>
+        </div>
+      </div>
+    </div>
+  </section>
+</Base>

@@ -1,0 +1,23 @@
+---
+import ServiceView from "../components/ServiceView.astro";
+import LocationView from "../components/LocationView.astro";
+import { services } from "../data/services";
+import { locations } from "../data/locations";
+
+export function getStaticPaths() {
+  return [...services, ...locations].map((item) => ({
+    params: { slug: item.slug },
+  }));
+}
+
+const { slug } = Astro.params;
+const service = services.find((item) => item.slug === slug);
+const location = locations.find((item) => item.slug === slug);
+
+if (!service && !location) {
+  throw new Error(`Unknown page: ${slug}`);
+}
+---
+
+{service && <ServiceView service={service} />}
+{location && <LocationView location={location} />}

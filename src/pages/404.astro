@@ -1,0 +1,19 @@
+---
+import Base from "../layouts/Base.astro";
+
+const title = "Page not found | JD's Fence Company";
+const description = "That page is not on the JD's Fence Company site. View fence services or call (409) 254-6532.";
+---
+
+<Base title={title} description={description} path="/404.html" noindex>
+  <section class="page-hero">
+    <div class="wrap narrow">
+      <h1>Page not found</h1>
+      <p>The link may be old. Fence services, service areas, and the quote form are still on this site.</p>
+      <div class="actions">
+        <a class="btn btn-dark" href="/services.html">View services</a>
+        <a class="btn btn-ghost" href="/">Home</a>
+      </div>
+    </div>
+  </section>
+</Base>

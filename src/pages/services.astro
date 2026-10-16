@@ -1,0 +1,35 @@
+---
+import Base from "../layouts/Base.astro";
+import ServiceCards from "../components/ServiceCards.astro";
+import { pageSchema } from "../data/schema";
+import { phoneDisplay } from "../data/site";
+
+const title = "Fence Installation Services in Beaumont, TX";
+const description =
+  "Wood, vinyl, chain link, aluminum, farm, and commercial fence installation from JD's Fence Company in Beaumont, TX. Call (409) 254-6532.";
+const path = "/services.html";
+const crumbs = [
+  { name: "Home", path: "/" },
+  { name: "Services", path },
+];
+const schema = pageSchema({ path, title, description, crumbs });
+---
+
+<Base title={title} description={description} path={path} schema={schema} crumbs={crumbs}>
+  <section class="page-hero">
+    <div class="wrap">
+      <p class="eyebrow">Beaumont, TX</p>
+      <h1>Fence services in Beaumont</h1>
+      <p class="lede">Six materials, each for a different job. Start with what the fence has to do, then open the matching page for the install steps, the cost factors, and a quote.</p>
+      <div class="actions">
+        <a class="btn btn-dark" href="tel:+14092546532">Call {phoneDisplay}</a>
+        <a class="btn btn-ghost" href="/contact.html#quote">Request a free quote</a>
+      </div>
+    </div>
+  </section>
+  <section class="section">
+    <div class="wrap">
+      <ServiceCards />
+    </div>
+  </section>
+</Base>

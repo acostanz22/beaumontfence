@@ -1,0 +1,53 @@
+---
+import Base from "../layouts/Base.astro";
+import { pageSchema } from "../data/schema";
+import { phoneDisplay } from "../data/site";
+import { locations } from "../data/locations";
+
+const title = "Fence Service Areas around Beaumont, TX";
+const description =
+  "JD's Fence Company serves Beaumont, Port Arthur, Nederland, Port Neches, Groves, Orange, Vidor, Lumberton, and Bridge City. Call (409) 254-6532.";
+const path = "/service-areas.html";
+const crumbs = [
+  { name: "Home", path: "/" },
+  { name: "Service Areas", path },
+];
+const schema = pageSchema({ path, title, description, crumbs });
+
+const notes: Record<string, string> = {
+  "beaumont-tx": "City lots, privacy fences, and the 6-foot permit rule.",
+  "port-arthur-tx": "Homes plus commercial yards. Permits start around 4 feet.",
+  "nederland-tx": "Close-set lots where the gate and the rear easement matter.",
+  "port-neches-tx": "Residential privacy along the river, often replacing a damp wood line.",
+  "groves-tx": "Dog runs, side-yard chain link, and rear-line privacy.",
+  "orange-tx": "In-town yards and county acreage, under Orange's own rules.",
+  "vidor-tx": "Larger lots, pines, and a mix of house fence and field fence.",
+  "lumberton-tx": "Hardin County privacy lines and pasture fence.",
+  "bridge-city-tx": "Humid residential streets and a few highway-front yards.",
+};
+---
+
+<Base title={title} description={description} path={path} schema={schema} crumbs={crumbs}>
+  <section class="page-hero">
+    <div class="wrap">
+      <p class="eyebrow">Southeast Texas</p>
+      <h1>Fence service areas</h1>
+      <p class="lede">We measure and install in Beaumont and the towns below. Each page covers the fence jobs and the local rule for that city, not a city history. Call {phoneDisplay} if your address is nearby and you do not see it listed.</p>
+    </div>
+  </section>
+  <section class="section">
+    <div class="wrap">
+      <ul class="area-grid">
+        {locations.map((location) => (
+          <li>
+            <a class="area-card" href={`/${location.slug}.html`} style="display:flex; flex-direction:column; text-decoration:none; color:inherit; height:100%;">
+              <h2 style="font-size:1.45rem;">{location.city}, TX</h2>
+              <p style="color:var(--muted); flex:1;">{notes[location.slug]}</p>
+              <span class="more">{location.county}</span>
+            </a>
+          </li>
+        ))}
+      </ul>
+    </div>
+  </section>
+</Base>

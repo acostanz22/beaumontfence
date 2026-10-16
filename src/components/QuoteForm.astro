@@ -1,0 +1,28 @@
+---
+import { phoneDisplay, tallySrc } from "../data/site";
+
+interface Props {
+  heading?: string;
+  id?: string;
+}
+const { heading = "Request a free quote", id = "quote" } = Astro.props;
+---
+
+<section class="quote-band" id={id}>
+  <div class="wrap">
+    <div class="quote-card">
+      <h2>{heading}</h2>
+      <p>Share the city, the fence type if you know it, and about how long the line is. We use this to call you back. The estimate is free.</p>
+      <iframe
+        data-tally-src={tallySrc}
+        loading="lazy"
+        width="100%"
+        height="552"
+        frameborder="0"
+        marginheight="0"
+        marginwidth="0"
+        title="GET A FREE QUOTE"></iframe>
+      <p class="fine">Prefer the phone? <a href="tel:+14092546532">{phoneDisplay}</a></p>
+    </div>
+  </div>
+</section>

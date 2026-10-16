@@ -1,0 +1,98 @@
+---
+import Base from "../layouts/Base.astro";
+import FaqList from "./FaqList.astro";
+import QuoteForm from "./QuoteForm.astro";
+import { pageSchema } from "../data/schema";
+import { phoneDisplay } from "../data/site";
+import type { Service } from "../data/services";
+
+interface Props {
+  service: Service;
+}
+const { service } = Astro.props;
+const path = `/${service.slug}.html`;
+const crumbs = [
+  { name: "Home", path: "/" },
+  { name: "Services", path: "/services.html" },
+  { name: service.name, path },
+];
+const schema = pageSchema({
+  path,
+  title: service.title,
+  description: service.description,
+  crumbs,
+  faqs: service.faqs,
+  service: { name: service.name, description: service.description },
+});
+---
+
+<Base title={service.title} description={service.description} path={path} schema={schema} crumbs={crumbs}>
+  <section class="page-hero">
+    <div class="wrap">
+      <p class="eyebrow">Beaumont, TX</p>
+      <h1>{service.h1}</h1>
+      <p class="lede">{service.intro}</p>
+      <div class="actions">
+        <a class="btn btn-dark" href="tel:+14092546532">Call {phoneDisplay}</a>
+        <a class="btn btn-ghost" href="#quote">Get a free quote</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="wrap split">
+      <img src={service.whenImage} alt={service.whenAlt} width={service.whenWidth} height={service.whenHeight} />
+      <div>
+        <h2>{service.whenTitle}</h2>
+        <p>{service.when}</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section band">
+    <div class="wrap">
+      <h2>How the install goes</h2>
+      <ol class="steps">
+        {service.process.map((step, index) => (
+          <li class="step">
+            <span>Step {index + 1}</span>
+            <h3>{step.h}</h3>
+            <p>{step.p}</p>
+          </li>
+        ))}
+      </ol>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="wrap">
+      <h2>What changes the price</h2>
+      <p class="lede">We quote after measuring. These are the details that move a {service.name.toLowerCase()} price.</p>
+      <ul class="factors">
+        {service.costs.map((cost) => (
+          <li class="factor">
+            <h3>{cost.h}</h3>
+            <p>{cost.p}</p>
+          </li>
+        ))}
+      </ul>
+    </div>
+  </section>
+
+  <FaqList faqs={service.faqs} />
+
+  <section class="section" style="padding-top: 0;">
+    <div class="wrap">
+      <h2>Related pages</h2>
+      <ul class="related">
+        {service.related.map((link) => (
+          <li><a href={link.href}>{link.label}</a></li>
+        ))}
+        <li><a href="/services.html">All services</a></li>
+        <li><a href="/service-areas.html">Service areas</a></li>
+      </ul>
+    </div>
+  </section>
+
+  <QuoteForm heading={`Get a ${service.name.toLowerCase()} estimate`} />
+</Base>
