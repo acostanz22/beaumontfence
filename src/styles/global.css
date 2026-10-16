@@ -171,7 +171,23 @@ a.btn.header-cta { display: none; }
   inset: 0;
   background: linear-gradient(90deg, rgba(12, 20, 16, 0.88) 0%, rgba(12, 20, 16, 0.62) 52%, rgba(12, 20, 16, 0.28) 100%);
 }
-.hero-content { position: relative; z-index: 1; padding: 4.5rem 0 5rem; }
+.hero-grid {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  gap: 1.25rem;
+  align-items: end;
+  padding: 2.2rem 0 2.4rem;
+}
+.hero-copy { min-width: 0; }
+.kicker {
+  margin: 0 0 0.2rem;
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--cta);
+}
 .eyebrow {
   letter-spacing: 0.14em;
   text-transform: uppercase;
@@ -180,8 +196,13 @@ a.btn.header-cta { display: none; }
   margin-bottom: 0.8rem;
   color: #f0d7c8;
 }
-.hero p, .hero a { color: white; }
-.hero p { font-size: 1.15rem; max-width: 40rem; }
+.hero-copy p, .hero-copy a { color: white; }
+.hero-copy p { font-size: 1.15rem; max-width: 40rem; }
+.hero .quote-card h2,
+.hero .quote-card p { color: var(--ink); max-width: none; }
+.hero .quote-card h2 { font-size: 1.7rem; }
+.hero .quote-card .kicker { color: var(--cta); font-size: 0.78rem; }
+.hero .quote-card { margin: 0; }
 .lede { font-size: 1.12rem; max-width: 44rem; }
 
 .section { padding: 4rem 0; }
@@ -343,6 +364,12 @@ a.btn.header-cta { display: none; }
   .sub a { color: var(--ink); border-radius: 8px; }
   .sub a:hover { background: var(--paper); color: var(--cta); }
   .drop:hover .sub, .drop:focus-within .sub { display: flex; }
+  .hero-grid {
+    grid-template-columns: 1.12fr 0.88fr;
+    align-items: center;
+    gap: 2rem;
+    padding: 3.2rem 0;
+  }
   .service-grid { grid-template-columns: 1fr 1fr 1fr; }
   .steps { grid-template-columns: repeat(4, 1fr); }
   .area-grid { grid-template-columns: 1fr 1fr 1fr; }

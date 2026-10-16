@@ -23,22 +23,22 @@ const schema = pageSchema({
 <Base title={title} description={description} path="/" schema={schema}>
   <section class="hero">
     <img class="hero-media" src="/images/hero.jpg" alt="Backyard lawn with a wood privacy fence" width="1800" height="1012" fetchpriority="high" />
-    <div class="wrap hero-content">
-      <p class="eyebrow">{businessName} · Beaumont, TX</p>
-      <h1>Fence Company in Beaumont, TX</h1>
-      <p>
-        We install <a href="/wood-fence.html">wood</a>, <a href="/vinyl-fence.html">vinyl</a>, <a href="/chain-link-fence.html">chain link</a>, <a href="/aluminum-fence.html">aluminum</a>, and <a href="/farm-fence.html">farm fence</a> for homes and <a href="/commercial-fencing.html">commercial lots</a> in Beaumont and nearby Southeast Texas. Tell us the line you need. We price it from the property.
-      </p>
-      <div class="actions">
-        <a class="btn" href="#quote">Request a free quote</a>
-        <a class="btn btn-line" href="tel:+14092546532">Call {phoneDisplay}</a>
+    <div class="wrap hero-grid">
+      <div class="hero-copy">
+        <p class="eyebrow">{businessName} · Beaumont, TX</p>
+        <h1>Fence Company in Beaumont, TX</h1>
+        <p>
+          We install <a href="/wood-fence.html">wood</a>, <a href="/vinyl-fence.html">vinyl</a>, <a href="/chain-link-fence.html">chain link</a>, <a href="/aluminum-fence.html">aluminum</a>, and <a href="/farm-fence.html">farm fence</a> for homes and <a href="/commercial-fencing.html">commercial lots</a> in Beaumont and nearby Southeast Texas. Tell us the line you need. We price it from the property.
+        </p>
+        <div class="actions">
+          <a class="btn btn-line" href="tel:+14092546532">Call {phoneDisplay}</a>
+        </div>
       </div>
+      <QuoteForm embedded heading="Get a fence quote" />
     </div>
   </section>
 
-  <QuoteForm />
-
-  <section class="section" style="padding-top: 0.5rem;">
+  <section class="section">
     <div class="wrap">
       <div class="section-head">
         <h2>Fence services</h2>
