@@ -1,6 +1,9 @@
 ---
 import { businessName, phoneDisplay } from "../data/site";
 import { services } from "../data/services";
+
+const officeHoursDays = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"];
+const officeHoursTime = "7 am – 7 pm";
 ---
 
 <footer class="footer">
@@ -30,6 +33,14 @@ import { services } from "../data/services";
         <li><a href="/contact.html#quote">Free quote</a></li>
         <li><a href="/service-areas.html">Areas we serve</a></li>
       </ul>
+    </div>
+    <div>
+      <h2>Office Hours</h2>
+      <div class="hours-list">
+        {officeHoursDays.map((day) => (
+          <div><span>{day}</span><span>{officeHoursTime}</span></div>
+        ))}
+      </div>
     </div>
   </div>
   <div class="wrap legal">
