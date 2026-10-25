@@ -1,10 +1,9 @@
 ---
 import Base from "../layouts/Base.astro";
-import FaqList from "./FaqList.astro";
-import QuoteForm from "./QuoteForm.astro";
 import { pageSchema } from "../data/schema";
-import { phoneDisplay } from "../data/site";
-import type { Service } from "../data/services";
+import { phoneDisplay, phoneTel } from "../data/site";
+import { services, type Service } from "../data/services";
+import { locations } from "../data/locations";
 
 interface Props {
   service: Service;
@@ -24,75 +23,119 @@ const schema = pageSchema({
   faqs: service.faqs,
   service: { name: service.name, description: service.description },
 });
+
+const estimate = "/contact.html#quote";
+const others = services.filter((item) => item.slug !== service.slug);
+const second = others[(services.findIndex((item) => item.slug === service.slug)) % others.length];
+const relatedServices = others.slice(0, 4);
 ---
 
-<Base title={service.title} description={service.description} path={path} schema={schema} crumbs={crumbs}>
-  <section class="page-hero">
-    <div class="wrap">
-      <p class="eyebrow">Beaumont, TX</p>
+<Base title={service.title} description={service.description} path={path} schema={schema}>
+  <div class="crumb-bar">
+    <nav class="wrap crumbs" aria-label="Breadcrumb">
+      {crumbs.map((crumb, index) => (
+        <span>
+          {index > 0 && " / "}
+          {index === crumbs.length - 1 ? (
+            <span aria-current="page">{crumb.name}</span>
+          ) : (
+            <a href={crumb.path}>{crumb.name}</a>
+          )}
+        </span>
+      ))}
+    </nav>
+  </div>
+
+  <section class="page-hero service-hero">
+    <div class="wrap service-hero-inner">
+      <p class="eyebrow">{service.name}</p>
       <h1>{service.h1}</h1>
       <p class="lede">{service.intro}</p>
       <div class="actions">
-        <a class="btn btn-dark" href="tel:+14092546532">Call {phoneDisplay}</a>
-        <a class="btn btn-ghost" href="#quote">Get a free quote</a>
+        <a class="btn btn-dark" href={`tel:${phoneTel}`}>Call {phoneDisplay}</a>
+        <a class="btn btn-ghost" href={estimate}>Get a free quote</a>
       </div>
     </div>
   </section>
 
-  <section class="section">
-    <div class="wrap split">
-      <img src={service.whenImage} alt={service.whenAlt} width={service.whenWidth} height={service.whenHeight} />
-      <div>
-        <h2>{service.whenTitle}</h2>
-        <p>{service.when}</p>
+  <section class="section service-body">
+    <div class="wrap service-layout">
+      <div class="service-main">
+        <div class="service-gallery">
+          <figure class="service-shot">
+            <img src={service.whenImage} alt={service.whenAlt} width={service.whenWidth} height={service.whenHeight} loading="lazy" decoding="async" />
+          </figure>
+          <figure class="service-shot">
+            <img src={second.image} alt={second.imageAlt} width={second.width} height={second.height} loading="lazy" decoding="async" />
+          </figure>
+        </div>
+
+        <div class="service-copy">
+          <h2>{service.whenTitle}</h2>
+          <p>{service.when}</p>
+
+          <h2>How the install goes</h2>
+          <ol class="steps">
+            {service.process.map((step, index) => (
+              <li class="step">
+                <span>Step {index + 1}</span>
+                <h3>{step.h}</h3>
+                <p>{step.p}</p>
+              </li>
+            ))}
+          </ol>
+
+          <h2>What changes the price</h2>
+          <p>We quote after measuring. These are the details that move a {service.name.toLowerCase()} price.</p>
+          <ul class="factors">
+            {service.costs.map((cost) => (
+              <li class="factor">
+                <h3>{cost.h}</h3>
+                <p>{cost.p}</p>
+              </li>
+            ))}
+          </ul>
+
+          <h2>Questions before you call</h2>
+          {service.faqs.map((faq) => (
+            <article class="faq-item">
+              <h3>{faq.q}</h3>
+              <p>{faq.a}</p>
+            </article>
+          ))}
+        </div>
       </div>
+
+      <aside class="service-aside" aria-label="Estimate and related services">
+        <div class="side-card" id="quote-aside">
+          <p class="side-kicker">Talk through the line</p>
+          <p>Call or send the address and a rough length. We will tell you whether the job is a repair, a replacement, or a different material than you started with.</p>
+          <p class="side-phone"><a class="phone-link-lg" href={`tel:${phoneTel}`}>{phoneDisplay}</a></p>
+          <p><a class="btn btn-dark" href={estimate}>Free quote form</a></p>
+        </div>
+        <div class="side-card side-card-muted">
+          <p class="side-kicker">Related</p>
+          <ul class="side-links">
+            {relatedServices.map((item) => (
+              <li><a href={`/${item.slug}.html`}>{item.name}</a></li>
+            ))}
+            <li><a href="/services.html">All services</a></li>
+          </ul>
+        </div>
+      </aside>
     </div>
   </section>
 
-  <section class="section band">
+  <section class="section section-towns" style="padding-top: 0;">
     <div class="wrap">
-      <h2>How the install goes</h2>
-      <ol class="steps">
-        {service.process.map((step, index) => (
-          <li class="step">
-            <span>Step {index + 1}</span>
-            <h3>{step.h}</h3>
-            <p>{step.p}</p>
-          </li>
-        ))}
-      </ol>
-    </div>
-  </section>
-
-  <section class="section">
-    <div class="wrap">
-      <h2>What changes the price</h2>
-      <p class="lede">We quote after measuring. These are the details that move a {service.name.toLowerCase()} price.</p>
-      <ul class="factors">
-        {service.costs.map((cost) => (
-          <li class="factor">
-            <h3>{cost.h}</h3>
-            <p>{cost.p}</p>
-          </li>
-        ))}
-      </ul>
-    </div>
-  </section>
-
-  <FaqList faqs={service.faqs} />
-
-  <section class="section" style="padding-top: 0;">
-    <div class="wrap">
-      <h2>Related pages</h2>
+      <h2>Areas we serve</h2>
       <ul class="related">
-        {service.related.map((link) => (
-          <li><a href={link.href}>{link.label}</a></li>
+        {locations.map((loc) => (
+          <li><a href={`/${loc.slug}.html`}>{loc.city}</a></li>
         ))}
-        <li><a href="/services.html">All services</a></li>
-        <li><a href="/service-areas.html">Service areas</a></li>
+        <li><a href="/service-areas.html">All service areas</a></li>
       </ul>
+      <p class="towns-links"><a href={estimate}>Request a free quote</a> · <a href="/services.html">All services</a></p>
     </div>
   </section>
-
-  <QuoteForm heading={`Get a ${service.name.toLowerCase()} estimate`} />
 </Base>

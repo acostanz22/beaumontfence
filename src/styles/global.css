@@ -1,4 +1,4 @@
-:root {
+﻿:root {
   --ink: #1c1915;
   --muted: #5c564c;
   --paper: #f6f3ed;
@@ -376,3 +376,43 @@ a.btn.header-cta { display: none; }
 }
 
 :focus-visible { outline: 3px solid #e07a3d; outline-offset: 2px; }
+
+/* Service page layout: crumb bar, slim hero, content + sticky sidebar */
+.crumb-bar { background: var(--white); border-bottom: 1px solid var(--line); }
+.crumb-bar .crumbs { padding: 0.7rem 0; }
+.service-hero { padding: 0; }
+.service-hero .service-hero-inner { padding: 2.2rem 0 1.4rem; }
+.service-hero .eyebrow { color: var(--cta); }
+.service-hero h1 { max-width: 20ch; }
+.service-body { padding-top: 1.5rem; }
+.service-layout { display: grid; gap: 1.75rem; align-items: start; }
+.service-main { min-width: 0; }
+.service-gallery { display: grid; gap: 0.85rem; margin: 0 0 1.5rem; }
+.service-shot { margin: 0; border-radius: 14px; overflow: hidden; background: var(--line); }
+.service-shot img { display: block; width: 100%; height: 220px; object-fit: cover; }
+.service-copy h2 { margin-top: 1.8rem; }
+.service-copy h2:first-child { margin-top: 0; }
+.service-copy .steps, .service-copy .factors { list-style: none; padding: 0; margin: 0.8rem 0 0; grid-template-columns: 1fr; }
+.service-copy .faq-item h3 { margin-bottom: 0.3rem; }
+.service-aside { display: grid; gap: 1rem; }
+.side-card { background: var(--white); border: 1px solid var(--line); border-radius: 16px; padding: 1.2rem 1.25rem 1.3rem; }
+.side-card-muted { background: var(--paper); }
+.side-kicker { margin: 0 0 0.55rem; font-size: 0.85rem; letter-spacing: 0.12em; text-transform: uppercase; font-weight: 700; color: var(--cta); }
+.side-phone { margin: 0.85rem 0 1rem; }
+.side-phone a { font-family: var(--serif); font-size: clamp(1.45rem, 3vw, 1.9rem); font-weight: 700; color: var(--ink); text-decoration: none; }
+.side-links { list-style: none; margin: 0; padding: 0; }
+.side-links a { display: block; padding: 0.35rem 0; color: var(--green); font-weight: 600; text-decoration: none; }
+.side-links a:hover { color: var(--cta); text-decoration: underline; text-underline-offset: 0.15em; }
+.section-towns h2 { margin-bottom: 0.85rem; }
+.towns-links { margin-top: 1rem; }
+
+@media (min-width: 720px) {
+  .service-gallery { grid-template-columns: 1fr 1fr; }
+  .service-shot img { height: 250px; }
+  .service-copy .steps, .service-copy .factors { grid-template-columns: 1fr 1fr; }
+}
+@media (min-width: 980px) {
+  .service-layout { grid-template-columns: minmax(0, 1.55fr) minmax(270px, 0.7fr); gap: 2rem; }
+  .service-aside { position: sticky; top: 6.5rem; }
+  .service-copy .steps { grid-template-columns: 1fr 1fr; }
+}
