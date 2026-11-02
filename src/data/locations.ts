@@ -25,7 +25,7 @@ export const locations: Location[] = [
       "Fence installation in Beaumont, TX for homes and commercial lots. See the city permit rule, then call JD's Fence Company at (409) 254-6532.",
     h1: "Fence Company in Beaumont, TX",
     intro:
-      "Beaumont is home base. Most calls are city lots: a backyard privacy fence, a gate that no longer latches, or a side yard that is tighter than it looks on a photo. We also fence commercial yards inside the city.",
+      "JD's Fence Company is based in Beaumont, so this is home base. Most calls are city lots: a backyard privacy fence, a gate that no longer latches, or a side yard that is tighter than it looks on a photo. We also fence commercial yards inside the city. Wood and vinyl cover most privacy jobs, with aluminum for pools and front yards. Call (409) 254-6532 and we will measure the line and send a written quote.",
     points: [
       "Jefferson County clay holds water after a hard rain. Posts set short in that ground move. We set them for the soil and the height of the fence.",
       "In-town lots often have a narrow side yard. Newer subdivisions, especially on the north side of the city, are more likely to add an HOA review on top of the city rule. We ask before materials are ordered.",
@@ -74,7 +74,7 @@ export const locations: Location[] = [
       "Fence company for Port Arthur homes and commercial yards. Fence permits start at about 4 feet. Call JD's Fence Company at (409) 254-6532.",
     h1: "Fence Company in Port Arthur, TX",
     intro:
-      "Port Arthur jobs split two ways: residential privacy on neighborhood lots, and chain link with a drive gate on commercial yards closer to the industrial side of town. Humidity off the ship channel is part of the material choice.",
+      "JD's Fence Company installs fences in Port Arthur for homes and commercial yards. Jobs split two ways: residential privacy on neighborhood lots, and chain link with a drive gate on yards closer to the industrial side of town. Humidity off the ship channel is part of the material choice. Port Arthur also has its own permit trigger, which is lower than Beaumont's. We confirm the rule for your address before we schedule the crew.",
     points: [
       "The City of Port Arthur requires a fence permit for fences that are 4 feet and taller. That is a lower threshold than Beaumont's 6-foot exemption, so a standard privacy fence here is a permitted job.",
       "Salt air and humidity are harder on bare steel than on aluminum or on coated chain link. We do not spec a bare steel ornamental fence for a yard that stays damp.",
@@ -123,7 +123,7 @@ export const locations: Location[] = [
       "Privacy fence installation for compact lots in Nederland, TX. Wood and vinyl, quoted on site. Call JD's Fence Company at (409) 254-6532.",
     h1: "Fence Company in Nederland, TX",
     intro:
-      "Nederland sits between Beaumont and Port Arthur, and the lots are usually tighter than a north-Beaumont subdivision. The common job is a privacy fence between houses, with a gate wide enough for a mower.",
+      "JD's Fence Company installs privacy fences for homes in Nederland, a town between Beaumont and Port Arthur. The lots are usually tighter than a north-Beaumont subdivision. The common job is a privacy fence between houses, with a gate wide enough for a mower. Rear lines often follow a drainage swale or utility easement, so we place the fence where it can stand. We measure the lot in person and send a written quote.",
     points: [
       "Side yards are often narrow. The gate location and the post at the corner matter more than a decorative top rail.",
       "Rear lines frequently follow a drainage swale or a utility easement. We place the fence where it can stand, not on top of the drainage.",
@@ -172,7 +172,7 @@ export const locations: Location[] = [
       "Wood and vinyl fences for Port Neches homes. JD's Fence Company quotes from the lot. Call (409) 254-6532.",
     h1: "Fence Company in Port Neches, TX",
     intro:
-      "Port Neches jobs are residential. Houses sit along the Neches, the air stays humid, and a lot of the fences we replace have already failed at the bottom rail. The new line is usually wood or vinyl privacy, not a farm fence.",
+      "JD's Fence Company installs residential fences in Port Neches, where houses sit along the Neches and the air stays humid. A lot of the fences we replace have already failed at the bottom rail. The new line is usually wood or vinyl privacy, not a farm fence. Gates are part of the quote, so a replacement does not copy a sagging opening. Call (409) 254-6532 and we will measure the lot.",
     points: [
       "Humidity off the river reaches the ground line. On a wood fence, that is the board and the post we watch. Vinyl avoids that rot path.",
       "Many lots have an alley or a rear utility line. The fence stops where access has to remain.",
@@ -221,7 +221,7 @@ export const locations: Location[] = [
       "Dog runs, side-yard chain link, and privacy fences in Groves, TX. Call JD's Fence Company at (409) 254-6532.",
     h1: "Fence Company in Groves, TX",
     intro:
-      "Groves is a residential town next to Port Neches, and the calls we get are often smaller than a full property wrap. A dog run, a side-yard chain-link section, or a privacy fence on the rear line is the typical scope.",
+      "JD's Fence Company installs fences for Groves homes, a residential town next to Port Neches. The calls we get are often smaller than a full property wrap. A dog run, a side-yard chain-link section, or a privacy fence on the rear line is the typical scope. Mixing materials is normal, such as wood or vinyl on the neighbor line and chain link on the run. We measure the lot and price the layout you actually have.",
     points: [
       "Lots are not deep. A full privacy wrap can feel like it eats the yard, so some owners close only the rear and leave a chain-link side for airflow and a view of pets.",
       "Mixing materials is normal here: wood or vinyl on the neighbor line, chain link on the run. We plan the posts where the two fences meet so the joint is solid.",
@@ -270,7 +270,7 @@ export const locations: Location[] = [
       "Fence installation in Orange, TX for in-town lots and county acreage. Rules differ from Beaumont. Call (409) 254-6532.",
     h1: "Fence Company in Orange, TX",
     intro:
-      "Orange is far enough east that the work changes. In town, we install wood and vinyl privacy on residential lots. Toward the county line, the same drive can end in a pasture that needs farm fence and an equipment gate.",
+      "JD's Fence Company serves Orange from Beaumont, and the work changes this far east. In town, we install wood and vinyl privacy on residential lots. Toward the county line, the same drive can end in a pasture that needs farm fence and an equipment gate. Orange has its own fence rules, so we do not apply Beaumont's exemption here. We check the address, then send a written quote for each scope.",
     points: [
       "The City of Orange lists a certificate of appropriateness application for a new fence, used where exterior work is reviewed. That is not a Beaumont permit exemption. We check whether the address needs an application before we order material.",
       "Ground in parts of the city holds water. Post depth follows the soil, and a wood finish weathers faster where the lot stays damp.",
@@ -319,7 +319,7 @@ export const locations: Location[] = [
       "Wood privacy and farm fence in Vidor, TX, including lots with trees. JD's Fence Company walks the line first. Call (409) 254-6532.",
     h1: "Fence Company in Vidor, TX",
     intro:
-      "Vidor sits north of Beaumont where the lots open up and the pines start. A house may need wood privacy near the porch and a longer field fence once the property leaves the yard. Trees are usually in the way of a straight line.",
+      "JD's Fence Company installs fences in Vidor, north of Beaumont where the lots open up and the pines start. A house may need wood privacy near the porch and a longer field fence once the property leaves the yard. Trees are usually in the way of a straight line. We walk the property before quoting so roots and low ground are priced in. Call (409) 254-6532 to schedule the walk.",
     points: [
       "Roots and soft spots decide post locations. We walk the line because a map measurement misses the trees and the low ground.",
       "Wood privacy is the common screen around the house. Farm fence takes over on the larger tracts. Chain link is the odd job, usually a kennel near the house.",
@@ -368,7 +368,7 @@ export const locations: Location[] = [
       "House-line privacy and pasture fence in Lumberton, TX. JD's Fence Company serves Hardin County from Beaumont. Call (409) 254-6532.",
     h1: "Fence Company in Lumberton, TX",
     intro:
-      "Lumberton is north of Beaumont in Hardin County. Lots are larger, pines are part of the layout, and a single driveway can need a privacy fence by the house and a pasture fence beyond it.",
+      "JD's Fence Company installs fences in Lumberton, north of Beaumont in Hardin County. Lots are larger, pines are part of the layout, and a single driveway can need a privacy fence by the house and a pasture fence beyond it. We spec the house line and the pasture line as two separate scopes. Slope, tree cover, and the change from yard to field decide where the posts go. Call (409) 254-6532 with the address and we will walk the line.",
     points: [
       "This is not a tight city side-yard job. The planning issues are slope, tree cover, and the change from yard to field.",
       "Wood privacy is the house fence. Ranch rail and field fence are the acreage fence. We spec them separately.",
@@ -417,7 +417,7 @@ export const locations: Location[] = [
       "Aluminum, vinyl, and chain link fences in Bridge City, TX, where humidity is hard on bare steel. Call (409) 254-6532.",
     h1: "Fence Company in Bridge City, TX",
     intro:
-      "Bridge City sits between Orange and Port Arthur, close to the Neches. Residential streets are the main work. A few commercial edges sit along the highway. The damp air is the reason we talk about material before style.",
+      "JD's Fence Company installs fences in Bridge City, between Orange and Port Arthur and close to the Neches. Residential streets are the main work, and a few commercial edges sit along the highway. The damp air is the reason we talk about material before style. Aluminum, vinyl, and coated chain link hold up better here than bare steel. We confirm the Bridge City requirement for your address before we build.",
     points: [
       "Bare steel ornamental fence is a poor spec here. Aluminum keeps the open metal look without that rust cycle. Vinyl does the same for a privacy screen.",
       "Wood still builds a solid backyard, and the ground line needs a finish if the color matters to you.",

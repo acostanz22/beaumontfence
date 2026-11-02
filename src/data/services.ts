@@ -39,7 +39,7 @@ export const services: Service[] = [
     width: 500,
     height: 330,
     intro:
-      "A wood fence is still the usual privacy fence on a Beaumont lot. We build picket, privacy, and rail styles, set the posts for local soil, and hang the gate with the rest of the line.",
+      "JD's Fence Company builds wood fences for Beaumont homes, and wood is still the usual privacy fence on a city lot. We install privacy, board-on-board, shadowbox, picket, and rail styles. Posts that touch the ground are pressure-treated and set for local clay soil. The gate is hung with the rest of the line so it latches without dragging. We measure the property first and send a written quote before any work starts.",
     whenTitle: "When a wood fence is the right job",
     when: "Choose wood when you want a solid screen or a rail line and you are willing to wash and finish it. Privacy, board-on-board, and shadowbox close a backyard. Picket and ranch rail mark a boundary and leave the yard open. Gulf humidity reaches the bottom board and the post at grade first, so wood is a poor fit if you want a fence with no finish schedule. In that case, look at vinyl.",
     whenImage: "/images/wood.jpg",
@@ -128,7 +128,7 @@ export const services: Service[] = [
     width: 1100,
     height: 619,
     intro:
-      "Vinyl is the privacy or picket fence for a Beaumont yard when you want the line to stay straight without a stain schedule. We install privacy, picket, and ranch rail, including two-, three-, and four-rail profiles.",
+      "JD's Fence Company installs vinyl fences for Beaumont yards where you want a straight line without a stain schedule. We build privacy, picket, and ranch rail styles, including two-, three-, and four-rail profiles. Vinyl does not absorb water the way a wood board does, which helps in Gulf humidity. Posts are set for the panel system and the soil so the line stays put. We measure the lot and send a written quote so you can compare it with wood.",
     whenTitle: "When vinyl is the right job",
     when: "Vinyl fits a homeowner who wants privacy or a clean picket line and does not want to paint or stain. It usually costs more than a comparable wood fence at the start, and it avoids the repeat finish work wood asks for in this humidity. It can still crack if something hits it, and the color can shift slightly over years in full sun. It is a weak choice for a long livestock line. That job belongs on the farm fence page.",
     whenImage: "/images/vinyl.jpg",
@@ -217,7 +217,7 @@ export const services: Service[] = [
     width: 585,
     height: 329,
     intro:
-      "Chain link is the practical fence when you need a secure line and you do not need a solid screen. We install it for residential yards, dog runs, and commercial edges around Beaumont.",
+      "JD's Fence Company installs chain-link fences for residential yards, dog runs, and commercial edges around Beaumont. Chain link is the practical choice when you need a secure line and do not need a solid screen. We offer galvanized fabric, plus black or green vinyl-coated fabric when you want it to blend into the yard. Slats and windscreens can be added if you want partial privacy. We measure the line and quote the gates and posts with the fabric.",
     whenTitle: "When chain link is the right job",
     when: "Use chain link for a yard, a kennel, a side lot, or a business edge where you want to see through the fence. It costs less than a privacy fence of the same length, and it does not give you backyard privacy unless you add slats or a screen. Black or green coated fabric sits quieter against a lawn than plain galvanized. For a shop yard with truck gates, start on the commercial fencing page.",
     whenImage: "/images/chain-link.jpg",
@@ -306,7 +306,7 @@ export const services: Service[] = [
     width: 542,
     height: 305,
     intro:
-      "Aluminum is the open metal fence for a pool, a front yard, or any line where you want to see through it. It gives the ornamental look people associate with iron, and it does not rust the way bare steel does in this humidity.",
+      "JD's Fence Company installs ornamental aluminum fences for Beaumont pools, front yards, and any line where you want to see through the fence. Aluminum gives the look people associate with iron. It does not rust the way bare steel does in this humidity. We set posts on the layout and hang gates that latch cleanly, including self-closing pool gates when the layout calls for them. We measure the line, count the openings, and send a written quote.",
     whenTitle: "When aluminum is the right job",
     when: "Choose aluminum when the fence should stay open: a pool barrier, a frontage, or a side yard you do not want to wall off. It is a poor substitute for a privacy screen. Wood or vinyl does that job. Around Beaumont, Port Arthur, and Bridge City, the humid air is hard on bare steel. Aluminum avoids that rust cycle. Confirm any pool-barrier rule for your city before we schedule, and we will build the height and gate style that layout needs.",
     whenImage: "/images/aluminum.jpg",
@@ -395,7 +395,7 @@ export const services: Service[] = [
     width: 1100,
     height: 619,
     intro:
-      "Farm fence is for acreage, not a city backyard. We build field fence and ranch rail for livestock and crop edges around Beaumont, including lots in Lumberton, Vidor, and Orange County.",
+      "JD's Fence Company builds farm fence for acreage around Beaumont, not for city backyards. We install field fence and ranch rail for livestock and crop edges, including lots in Lumberton, Vidor, and Orange County. The mesh, rail, and height change with the animals you keep. Corner and gate posts are set to carry the load, and gates are sized for the truck or tractor that uses them. We walk the line before we quote because pasture fences cross soft ground, ditches, and trees.",
     whenTitle: "When a farm fence is the right job",
     when: "Use farm fence when the line has to hold animals or keep them out of a crop. Horses need a rail they can see. Cattle are often held with field fence and a solid post. Goats test mesh and latches. A privacy fence around the house is a separate run of wood or vinyl. The two can meet on the same property, and they should not be forced into one product. We walk the line because pasture fences cross soft ground, ditches, and trees.",
     whenImage: "/images/farm.jpg",
@@ -485,7 +485,7 @@ export const services: Service[] = [
     width: 585,
     height: 329,
     intro:
-      "Commercial fencing in Beaumont is usually chain link, sometimes aluminum, and almost always a gate a truck can use. We plan the line around the yard, the equipment, and the city's rule for that address.",
+      "JD's Fence Company installs commercial fencing for shops, storage yards, and job sites in Beaumont. The fence is usually chain link, sometimes aluminum, and almost always paired with a gate a truck can use. We plan the line around the yard, the equipment, and the city's rule for that address. Posts and fabric are specified for the height the site needs instead of a residential kit. We read the site, then send a written quote that prices the gates and the fence together.",
     whenTitle: "When a commercial fence is the right job",
     when: "A shop, a storage yard, a contractor lot, or a light industrial edge needs a spec, not a backyard panel. Chain link is the fence we install most often for businesses in the Beaumont area. Aluminum fits a frontage that should stay open and finished. A wood privacy fence is the wrong product around a yard full of trucks. Security toppers such as barbed wire go on commercial sites only where that city allows them.",
     whenImage: "/images/chain-link.jpg",
