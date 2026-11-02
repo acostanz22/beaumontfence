@@ -22,10 +22,10 @@ const {
   <img class="hero-media" src={image} alt={imageAlt} width="1800" height="1012" loading="eager" decoding="async" />
   <div class="wrap hero-grid hero-grid-slim">
     <div class="hero-copy">
-      {eyebrow && <p class="hero-label">{eyebrow}</p>}
       <h1>{title}</h1>
       <p>{lede}</p>
       <div class="actions">
+        <a class="btn" href="#quote">Request a free quote</a>
         <a class="btn btn-line" href={`tel:${phoneTel}`}>Call {phoneDisplay}</a>
       </div>
     </div>

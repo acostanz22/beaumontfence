@@ -7,6 +7,21 @@ const officeHoursTime = "7 am – 7 pm";
 ---
 
 <footer class="footer">
+  <div class="wrap footer-top">
+    <a class="logo footer-logo" href="/" aria-label={`${businessName} home`}>
+      <svg viewBox="0 0 48 48" aria-hidden="true">
+        <rect width="48" height="48" rx="10" fill="#1B4332"></rect>
+        <path d="M8 38V20l5-7 5 7v18" stroke="#F3EDE3" stroke-width="2.4" stroke-linejoin="round"></path>
+        <path d="M19 38V16l5-7 5 7v22" stroke="#F3EDE3" stroke-width="2.4" stroke-linejoin="round"></path>
+        <path d="M30 38V22l5-7 5 7v16" stroke="#F3EDE3" stroke-width="2.4" stroke-linejoin="round"></path>
+        <path d="M7 38h34" stroke="#E07A3D" stroke-width="2.4" stroke-linecap="round"></path>
+      </svg>
+      <span class="logo-text">
+        <strong>JD's</strong>
+        <span>Fence Co.</span>
+      </span>
+    </a>
+  </div>
   <div class="wrap footer-grid">
     <div>
       <h2>Company</h2>
@@ -45,6 +60,6 @@ const officeHoursTime = "7 am – 7 pm";
   </div>
   <div class="wrap legal">
     <p>{businessName} · Beaumont, TX · <a href="tel:+14092546532">{phoneDisplay}</a></p>
-    <p>Fence installation for homes, commercial lots, and acreage. Service-area company. No walk-in showroom.</p>
+    <p>Service-area company based in Beaumont, TX. No walk-in showroom.</p>
   </div>
 </footer>
