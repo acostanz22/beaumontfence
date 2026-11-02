@@ -4,18 +4,25 @@ import type { Faq } from "../data/services";
 interface Props {
   faqs: Faq[];
   heading?: string;
+  tone?: "paper" | "white" | "sand" | "sage";
 }
-const { faqs, heading = "Questions before you call" } = Astro.props;
+const { faqs, heading = "Frequently asked questions", tone = "paper" } = Astro.props;
+const band = `section band-${tone}`;
 ---
 
-<section class="section">
-  <div class="wrap narrow">
-    <h2>{heading}</h2>
-    {faqs.map((faq) => (
-      <article class="faq-item">
-        <h3>{faq.q}</h3>
-        <p>{faq.a}</p>
-      </article>
-    ))}
+<section class={band}>
+  <div class="wrap narrow faq-wrap">
+    <div class="section-head">
+      <h2>{heading}</h2>
+      <p>Straight answers about cost, materials, permits, and gates before you request a quote.</p>
+    </div>
+    <div class="faq-list">
+      {faqs.map((faq) => (
+        <article class="faq-item">
+          <h3>{faq.q}</h3>
+          <p>{faq.a}</p>
+        </article>
+      ))}
+    </div>
   </div>
 </section>

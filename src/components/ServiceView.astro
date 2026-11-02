@@ -1,5 +1,6 @@
 ---
 import Base from "../layouts/Base.astro";
+import PageHero from "./PageHero.astro";
 import { pageSchema } from "../data/schema";
 import { phoneDisplay, phoneTel } from "../data/site";
 import { services, type Service } from "../data/services";
@@ -24,7 +25,7 @@ const schema = pageSchema({
   service: { name: service.name, description: service.description },
 });
 
-const estimate = "/contact.html#quote";
+const estimate = "#quote";
 const others = services.filter((item) => item.slug !== service.slug);
 const second = others[(services.findIndex((item) => item.slug === service.slug)) % others.length];
 const relatedServices = others.slice(0, 4);
@@ -46,19 +47,15 @@ const relatedServices = others.slice(0, 4);
     </nav>
   </div>
 
-  <section class="page-hero service-hero">
-    <div class="wrap service-hero-inner">
-      <p class="eyebrow">{service.name}</p>
-      <h1>{service.h1}</h1>
-      <p class="lede">{service.intro}</p>
-      <div class="actions">
-        <a class="btn btn-dark" href={`tel:${phoneTel}`}>Call {phoneDisplay}</a>
-        <a class="btn btn-ghost" href={estimate}>Get a free quote</a>
-      </div>
-    </div>
-  </section>
+  <PageHero
+    title={service.h1}
+    lede={service.intro}
+    eyebrow={service.name}
+    image={service.image}
+    imageAlt={service.imageAlt}
+  />
 
-  <section class="section service-body">
+  <section class="section band-white service-body">
     <div class="wrap service-layout">
       <div class="service-main">
         <div class="service-gallery">
@@ -107,7 +104,7 @@ const relatedServices = others.slice(0, 4);
       </div>
 
       <aside class="service-aside" aria-label="Estimate and related services">
-        <div class="side-card" id="quote-aside">
+        <div class="side-card">
           <p class="side-kicker">Talk through the line</p>
           <p>Call or send the address and a rough length. We will tell you whether the job is a repair, a replacement, or a different material than you started with.</p>
           <p class="side-phone"><a class="phone-link-lg" href={`tel:${phoneTel}`}>{phoneDisplay}</a></p>
@@ -127,7 +124,7 @@ const relatedServices = others.slice(0, 4);
     </div>
   </section>
 
-  <section class="section section-towns" style="padding-top: 0;">
+  <section class="section band-sage section-towns">
     <div class="wrap">
       <h2>Areas we serve</h2>
       <ul class="related">

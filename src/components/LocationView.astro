@@ -1,8 +1,9 @@
 ---
 import Base from "../layouts/Base.astro";
 import FaqList from "./FaqList.astro";
+import PageHero from "./PageHero.astro";
 import { pageSchema } from "../data/schema";
-import { phoneDisplay } from "../data/site";
+import { phoneDisplay, phoneTel } from "../data/site";
 import { locations, type Location } from "../data/locations";
 
 interface Props {
@@ -27,33 +28,44 @@ const nearby = location.nearby
   .filter((item): item is Location => Boolean(item));
 ---
 
-<Base title={location.title} description={location.description} path={path} schema={schema} crumbs={crumbs}>
-  <section class="page-hero">
-    <div class="wrap">
-      <p class="eyebrow">{location.county}, Texas</p>
-      <h1>{location.h1}</h1>
-      <p class="lede">{location.intro}</p>
-      <div class="actions">
-        <a class="btn btn-dark" href="tel:+14092546532">Call {phoneDisplay}</a>
-        <a class="btn btn-ghost" href="/contact.html#quote">Request a free quote</a>
-      </div>
-    </div>
-  </section>
+<Base title={location.title} description={location.description} path={path} schema={schema}>
+  <div class="crumb-bar">
+    <nav class="wrap crumbs" aria-label="Breadcrumb">
+      {crumbs.map((crumb, index) => (
+        <span>
+          {index > 0 && " / "}
+          {index === crumbs.length - 1 ? (
+            <span aria-current="page">{crumb.name}</span>
+          ) : (
+            <a href={crumb.path}>{crumb.name}</a>
+          )}
+        </span>
+      ))}
+    </nav>
+  </div>
 
-  <section class="section">
+  <PageHero
+    title={location.h1}
+    lede={location.intro}
+    eyebrow={`${location.county}, Texas`}
+    image="/images/hero.jpg"
+    imageAlt={`Fence work near ${location.city}, Texas`}
+  />
+
+  <section class="section band-white">
     <div class="wrap narrow">
       <h2>Fence work in {location.city}</h2>
       {location.points.map((point) => <p>{point}</p>)}
     </div>
   </section>
 
-  <section class="section band">
+  <section class="section band-sage">
     <div class="wrap">
       <h2>Materials that fit these lots</h2>
       <ul class="fit-grid">
         {location.fits.map((fit) => (
           <li>
-            <a class="fit-card" href={fit.href} style="display:block; text-decoration:none; color:inherit;">
+            <a class="fit-card" href={fit.href}>
               <h3>{fit.label}</h3>
               <p>{fit.note}</p>
               <span class="more">View service</span>
@@ -64,16 +76,16 @@ const nearby = location.nearby
     </div>
   </section>
 
-  <section class="section">
+  <section class="section band-paper">
     <div class="wrap narrow">
       <h2>Local rule to check first</h2>
       <p>{location.rule}</p>
     </div>
   </section>
 
-  <FaqList faqs={location.faqs} heading={`Questions about fencing in ${location.city}`} />
+  <FaqList faqs={location.faqs} heading={`Questions about fencing in ${location.city}`} tone="sand" />
 
-  <section class="section" style="padding-top: 0;">
+  <section class="section band-white">
     <div class="wrap">
       <h2>Nearby areas</h2>
       <ul class="related">
@@ -86,8 +98,8 @@ const nearby = location.nearby
         <h2>Get a {location.city} fence estimate</h2>
         <p>Call {phoneDisplay} or send the quote form with the address and an approximate length.</p>
         <div class="actions">
-          <a class="btn" href="/contact.html#quote">Request a free quote</a>
-          <a class="btn btn-line" href="tel:+14092546532">Call {phoneDisplay}</a>
+          <a class="btn" href="#quote">Request a free quote</a>
+          <a class="btn btn-line" href={`tel:${phoneTel}`}>Call {phoneDisplay}</a>
         </div>
       </div>
     </div>

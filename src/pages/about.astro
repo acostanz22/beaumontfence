@@ -1,5 +1,6 @@
 ---
 import Base from "../layouts/Base.astro";
+import PageHero from "../components/PageHero.astro";
 import { pageSchema } from "../data/schema";
 import { businessName, phoneDisplay } from "../data/site";
 import { services } from "../data/services";
@@ -15,22 +16,30 @@ const crumbs = [
 const schema = pageSchema({ path, title, description, crumbs });
 ---
 
-<Base title={title} description={description} path={path} schema={schema} crumbs={crumbs}>
-  <section class="page-hero">
+<Base title={title} description={description} path={path} schema={schema}>
+  <div class="crumb-bar">
+    <nav class="wrap crumbs" aria-label="Breadcrumb">
+      <a href="/">Home</a> / <span aria-current="page">About</span>
+    </nav>
+  </div>
+
+  <PageHero
+    title="About our Beaumont fence company"
+    lede={`${businessName} installs fences for homes, commercial lots, and acreage in Beaumont, Texas. We measure the line, recommend a material that fits the job, and build wood, vinyl, chain link, aluminum, and farm fence.`}
+    eyebrow={businessName}
+    image="/images/wood.jpg"
+    imageAlt="Wood privacy fence installed along a residential yard"
+  />
+
+  <section class="section band-white">
     <div class="wrap narrow">
-      <p class="eyebrow">{businessName}</p>
-      <h1>About our Beaumont fence company</h1>
-      <p class="lede">JD's Fence Company installs fences for homes, commercial lots, and acreage in Beaumont, Texas. We measure the line, recommend a material that fits the job, and build wood, vinyl, chain link, aluminum, and farm fence.</p>
       <p>The work is local. Most calls are a backyard privacy fence, a gate that sags, a pool or frontage that needs an open metal fence, or a commercial yard that needs chain link and a drive opening. Acreage jobs pick up toward Lumberton, Vidor, and Orange County.</p>
       <p>We quote from the property. Tell us the city, the approximate length, and what the fence has to do. If only part of an old line has failed, we will say so instead of replacing sections that are still sound.</p>
       <p>We are a service-area company. There is no walk-in showroom. The phone number is {phoneDisplay}.</p>
-      <div class="actions">
-        <a class="btn btn-dark" href="tel:+14092546532">Call {phoneDisplay}</a>
-        <a class="btn btn-ghost" href="/contact.html#quote">Request a free quote</a>
-      </div>
     </div>
   </section>
-  <section class="section">
+
+  <section class="section band-sage">
     <div class="wrap">
       <h2>What we install</h2>
       <ul class="related">

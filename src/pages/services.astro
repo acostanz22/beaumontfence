@@ -1,6 +1,7 @@
 ---
 import Base from "../layouts/Base.astro";
 import ServiceCards from "../components/ServiceCards.astro";
+import PageHero from "../components/PageHero.astro";
 import { pageSchema } from "../data/schema";
 import { phoneDisplay } from "../data/site";
 
@@ -15,19 +16,22 @@ const crumbs = [
 const schema = pageSchema({ path, title, description, crumbs });
 ---
 
-<Base title={title} description={description} path={path} schema={schema} crumbs={crumbs}>
-  <section class="page-hero">
-    <div class="wrap">
-      <p class="eyebrow">Beaumont, TX</p>
-      <h1>Fence services in Beaumont</h1>
-      <p class="lede">Six materials, each for a different job. Start with what the fence has to do, then open the matching page for the install steps, the cost factors, and a quote.</p>
-      <div class="actions">
-        <a class="btn btn-dark" href="tel:+14092546532">Call {phoneDisplay}</a>
-        <a class="btn btn-ghost" href="/contact.html#quote">Request a free quote</a>
-      </div>
-    </div>
-  </section>
-  <section class="section">
+<Base title={title} description={description} path={path} schema={schema}>
+  <div class="crumb-bar">
+    <nav class="wrap crumbs" aria-label="Breadcrumb">
+      <a href="/">Home</a> / <span aria-current="page">Services</span>
+    </nav>
+  </div>
+
+  <PageHero
+    title="Fence services in Beaumont"
+    lede={`Six materials, each for a different job. Start with what the fence has to do, then open the matching page for install steps, cost factors, and a free quote. Call ${phoneDisplay} if you want help choosing.`}
+    eyebrow="Beaumont, TX"
+    image="/images/vinyl.jpg"
+    imageAlt="Vinyl fence along a residential lawn"
+  />
+
+  <section class="section band-white">
     <div class="wrap">
       <ServiceCards />
     </div>

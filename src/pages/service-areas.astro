@@ -1,5 +1,6 @@
 ---
 import Base from "../layouts/Base.astro";
+import PageHero from "../components/PageHero.astro";
 import { pageSchema } from "../data/schema";
 import { phoneDisplay } from "../data/site";
 import { locations } from "../data/locations";
@@ -27,22 +28,29 @@ const notes: Record<string, string> = {
 };
 ---
 
-<Base title={title} description={description} path={path} schema={schema} crumbs={crumbs}>
-  <section class="page-hero">
-    <div class="wrap">
-      <p class="eyebrow">Southeast Texas</p>
-      <h1>Fence service areas</h1>
-      <p class="lede">We measure and install in Beaumont and the towns below. Each page covers the fence jobs and the local rule for that city, not a city history. Call {phoneDisplay} if your address is nearby and you do not see it listed.</p>
-    </div>
-  </section>
-  <section class="section">
+<Base title={title} description={description} path={path} schema={schema}>
+  <div class="crumb-bar">
+    <nav class="wrap crumbs" aria-label="Breadcrumb">
+      <a href="/">Home</a> / <span aria-current="page">Service Areas</span>
+    </nav>
+  </div>
+
+  <PageHero
+    title="Fence service areas"
+    lede={`We measure and install in Beaumont and the towns below. Each page covers the fence jobs and the local rule for that city. Call ${phoneDisplay} if your address is nearby and you do not see it listed.`}
+    eyebrow="Southeast Texas"
+    image="/images/farm.jpg"
+    imageAlt="Ranch rail fence along open land in Southeast Texas"
+  />
+
+  <section class="section band-white">
     <div class="wrap">
       <ul class="area-grid">
         {locations.map((location) => (
           <li>
-            <a class="area-card" href={`/${location.slug}.html`} style="display:flex; flex-direction:column; text-decoration:none; color:inherit; height:100%;">
-              <h2 style="font-size:1.45rem;">{location.city}, TX</h2>
-              <p style="color:var(--muted); flex:1;">{notes[location.slug]}</p>
+            <a class="area-card" href={`/${location.slug}.html`}>
+              <h2>{location.city}, TX</h2>
+              <p>{notes[location.slug]}</p>
               <span class="more">{location.county}</span>
             </a>
           </li>

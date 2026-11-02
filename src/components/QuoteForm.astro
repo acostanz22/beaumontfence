@@ -11,7 +11,6 @@ const { heading = "Request a free quote", id = "quote", embedded = false } = Ast
 
 {embedded ? (
   <div class="quote-card" id={id}>
-    <p class="kicker">Free estimate</p>
     <h2>{heading}</h2>
     <iframe
       data-tally-src={tallySrc}
@@ -28,7 +27,6 @@ const { heading = "Request a free quote", id = "quote", embedded = false } = Ast
     <div class="wrap">
       <div class="quote-card">
         <h2>{heading}</h2>
-        <p>Share the city, the fence type if you know it, and about how long the line is. We use this to call you back. The estimate is free.</p>
         <iframe
           data-tally-src={tallySrc}
           loading="lazy"

@@ -4,12 +4,13 @@ import ServiceCards from "../components/ServiceCards.astro";
 import FaqList from "../components/FaqList.astro";
 import QuoteForm from "../components/QuoteForm.astro";
 import { pageSchema } from "../data/schema";
-import { businessName, homeFaqs, phoneDisplay } from "../data/site";
+import { businessName, homeFaqs, phoneDisplay, phoneTel } from "../data/site";
 import { locations } from "../data/locations";
+import { reviews } from "../data/reviews";
 
 const title = "Fence Company in Beaumont, TX | JD's Fence Company";
 const description =
-  "Wood, vinyl, chain link, aluminum, farm, and commercial fence installation in Beaumont, TX. Call (409) 254-6532 or request a free on-site quote.";
+  "JD's Fence Company installs wood, vinyl, chain-link, aluminum, farm, and commercial fences in Beaumont, TX. Call (409) 254-6532 for a free estimate.";
 const crumbs = [{ name: "Home", path: "/" }];
 const schema = pageSchema({
   path: "/",
@@ -18,102 +19,177 @@ const schema = pageSchema({
   crumbs,
   faqs: homeFaqs,
 });
+
+const gallery = [
+  { src: "/images/wood.jpg", alt: "Wood privacy fence along a residential yard", href: "/wood-fence.html", label: "Wood" },
+  { src: "/images/vinyl.jpg", alt: "White vinyl fence along a residential lawn", href: "/vinyl-fence.html", label: "Vinyl" },
+  { src: "/images/chain-link.jpg", alt: "Galvanized chain-link fence with metal posts", href: "/chain-link-fence.html", label: "Chain link" },
+  { src: "/images/aluminum.jpg", alt: "Black ornamental aluminum fence behind a hedge", href: "/aluminum-fence.html", label: "Aluminum" },
+  { src: "/images/farm.jpg", alt: "Wooden ranch rail fence along a grassy field", href: "/farm-fence.html", label: "Farm" },
+  { src: "/images/chain-link.jpg", alt: "Chain-link fence for commercial yards and secure lots", href: "/commercial-fencing.html", label: "Commercial" },
+];
 ---
 
 <Base title={title} description={description} path="/" schema={schema}>
-  <section class="hero">
+  <section class="hero hero-home">
     <img class="hero-media" src="/images/hero.jpg" alt="Backyard lawn with a wood privacy fence" width="1800" height="1012" fetchpriority="high" />
     <div class="wrap hero-grid">
       <div class="hero-copy">
-        <p class="eyebrow">{businessName} · Beaumont, TX</p>
         <h1>Fence Company in Beaumont, TX</h1>
         <p>
-          We install <a href="/wood-fence.html">wood</a>, <a href="/vinyl-fence.html">vinyl</a>, <a href="/chain-link-fence.html">chain link</a>, <a href="/aluminum-fence.html">aluminum</a>, and <a href="/farm-fence.html">farm fence</a> for homes and <a href="/commercial-fencing.html">commercial lots</a> in Beaumont and nearby Southeast Texas. Tell us the line you need. We price it from the property.
+          JD’s Fence Company provides professional residential and commercial fence installation throughout Beaumont, TX, and surrounding communities. We specialize in <a href="/wood-fence.html">wood privacy fences</a>, <a href="/vinyl-fence.html">vinyl fencing</a>, <a href="/chain-link-fence.html">chain-link fences</a>, <a href="/aluminum-fence.html">aluminum fencing</a>, <a href="/farm-fence.html">farm fencing</a>, and <a href="/commercial-fencing.html">commercial security fences</a>. Whether you're replacing an old fence, adding privacy to your backyard, or securing a commercial property, our team delivers dependable installation, durable materials, and competitive pricing. Contact us today for a free fence estimate.
         </p>
         <div class="actions">
-          <a class="btn btn-line" href="tel:+14092546532">Call {phoneDisplay}</a>
+          <a class="btn" href="#quote">Request a free quote</a>
+          <a class="btn btn-line" href={`tel:${phoneTel}`}>Call {phoneDisplay}</a>
         </div>
       </div>
-      <QuoteForm embedded heading="Get a fence quote" />
+      <QuoteForm embedded heading="Get a free quote" />
+    </div>
+    <div class="hero-brand">
+      <div class="wrap hero-brand-inner">
+        <a class="hero-logo" href="/" aria-label={`${businessName} home`}>
+          <svg viewBox="0 0 48 48" aria-hidden="true">
+            <rect width="48" height="48" rx="10" fill="#1B4332"></rect>
+            <path d="M8 38V20l5-7 5 7v18" stroke="#F3EDE3" stroke-width="2.4" stroke-linejoin="round"></path>
+            <path d="M19 38V16l5-7 5 7v22" stroke="#F3EDE3" stroke-width="2.4" stroke-linejoin="round"></path>
+            <path d="M30 38V22l5-7 5 7v16" stroke="#F3EDE3" stroke-width="2.4" stroke-linejoin="round"></path>
+            <path d="M7 38h34" stroke="#E07A3D" stroke-width="2.4" stroke-linecap="round"></path>
+          </svg>
+          <span>
+            <strong>JD's Fence Company</strong>
+            <em>Beaumont, TX</em>
+          </span>
+        </a>
+      </div>
     </div>
   </section>
 
-  <section class="section">
+  <section class="section band-paper">
     <div class="wrap">
       <div class="section-head">
-        <h2>Fence services</h2>
-        <p>Pick the material that matches the job. A pool barrier, a backyard screen, and a commercial yard are not the same fence.</p>
+        <h2>Why choose JD's Fence Company</h2>
+        <p>Local fence work priced from the property, with materials matched to the job—not a one-size panel for every yard.</p>
+      </div>
+      <ul class="why-grid">
+        <li>
+          <h3>On-site estimates</h3>
+          <p>We look at the line, the soil, and the openings before we write a number. Photos help start the conversation. They do not set the price.</p>
+        </li>
+        <li>
+          <h3>Six fence types</h3>
+          <p>Wood, vinyl, chain link, aluminum, farm, and commercial fencing—so the material fits privacy, pets, pools, acreage, or a shop yard.</p>
+        </li>
+        <li>
+          <h3>Built for Southeast Texas</h3>
+          <p>Wet clay, Gulf humidity, and local city rules shape how posts are set and which fence belongs on your lot.</p>
+        </li>
+        <li>
+          <h3>Clear next steps</h3>
+          <p>Request an estimate, get a written quote, then schedule installation when you are ready. Call {phoneDisplay} anytime.</p>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="section band-white">
+    <div class="wrap">
+      <div class="section-head">
+        <h2>Our 6 fence services</h2>
+        <p>Even cards for every material we install. Pick the fence that matches the job, then request a free quote.</p>
       </div>
       <ServiceCards />
     </div>
   </section>
 
-  <section class="section band">
+  <section class="section band-sage">
     <div class="wrap">
       <div class="section-head">
-        <h2>Fences we install</h2>
-        <p>Photos from our project library. The right layout still comes from your lot, not from a picture.</p>
+        <h2>Project gallery</h2>
+        <p>Fence styles from our project library. The right layout still comes from measuring your lot.</p>
       </div>
-      <div class="gallery">
-        <img src="/images/wood.jpg" alt="Wood privacy fence with vertical boards along a residential yard" width="500" height="330" />
-        <img src="/images/vinyl.jpg" alt="White vinyl picket fence along a residential lawn" width="1100" height="619" />
-        <img src="/images/aluminum.jpg" alt="Black ornamental fence with pointed finials behind a trimmed hedge" width="542" height="305" />
-        <img src="/images/farm.jpg" alt="Wooden ranch rail fence along a grassy field" width="1100" height="619" />
+      <div class="gallery gallery-6">
+        {gallery.map((item) => (
+          <a class="gallery-card" href={item.href}>
+            <img src={item.src} alt={item.alt} width="640" height="420" loading="lazy" decoding="async" />
+            <span>{item.label}</span>
+          </a>
+        ))}
       </div>
     </div>
   </section>
 
-  <section class="section">
-    <div class="wrap two">
-      <article class="info-card">
-        <h2>Houses</h2>
-        <p>Backyard privacy, pet runs, pool barriers, and replacements along a property line. In Beaumont that is often a six-foot wood or vinyl fence and a gate that fits the mower. Open front yards and pools are usually aluminum.</p>
-        <p><a href="/wood-fence.html">Wood</a> and <a href="/vinyl-fence.html">vinyl</a> are the privacy options. <a href="/aluminum-fence.html">Aluminum</a> stays open.</p>
-      </article>
-      <article class="info-card">
-        <h2>Lots and acreage</h2>
-        <p>A shop yard needs chain link and a gate a truck can clear. A pasture needs field fence or ranch rail, not a backyard panel. Those jobs show up in Beaumont, Port Arthur, and on acreage toward Lumberton, Vidor, and Orange.</p>
-        <p><a href="/commercial-fencing.html">Commercial fencing</a> and <a href="/farm-fence.html">farm fence</a> are quoted as their own scopes.</p>
-      </article>
-    </div>
-  </section>
-
-  <section class="section band">
-    <div class="wrap">
-      <h2>How to choose a fence</h2>
-      <ol class="choose">
-        <li><strong>Name the job.</strong> Screen a yard, hold a pet, secure a lot, or mark a field. That choice narrows the material faster than a style photo.</li>
-        <li><strong>Look at the ground.</strong> Beaumont clay stays wet, and pines north of town get in the way of post holes. Short posts in that soil move.</li>
-        <li><strong>Count the openings.</strong> A walk gate, a mower gate, and a drive gate are different widths. The wrong opening is a daily problem.</li>
-        <li><strong>Check the city.</strong> Beaumont, Port Arthur, and Orange do not share one permit rule. We confirm the address before we build. See <a href="/service-areas.html">service areas</a>.</li>
-      </ol>
-    </div>
-  </section>
-
-  <section class="section">
+  <section class="section band-white">
     <div class="wrap">
       <div class="section-head">
-        <h2>Service area</h2>
-        <p>We work in Beaumont and the nearby towns we can measure in person. Details for each city are on the <a href="/service-areas.html">service areas</a> page.</p>
+        <h2>Customer reviews</h2>
+        <p>Recent feedback from customers who hired {businessName} for fence work around Beaumont.</p>
       </div>
-      <ul class="related">
-        {locations.map((location) => (
-          <li><a href={`/${location.slug}.html`}>{location.city}</a></li>
+      <ul class="review-grid">
+        {reviews.map((review) => (
+          <li class="review-card">
+            <p class="review-text">“{review.text}”</p>
+            <p class="review-meta">
+              <strong>{review.name}</strong>
+              <span>{review.source}</span>
+            </p>
+          </li>
         ))}
       </ul>
     </div>
   </section>
 
-  <FaqList faqs={homeFaqs} />
+  <section class="section band-paper">
+    <div class="wrap">
+      <div class="section-head">
+        <h2>Our installation process</h2>
+        <p>Three simple steps from first call to a finished fence line.</p>
+      </div>
+      <ol class="process-grid">
+        <li>
+          <span>1</span>
+          <h3>Request an estimate</h3>
+          <p>Call {phoneDisplay} or send the quote form with your city and a rough length.</p>
+        </li>
+        <li>
+          <span>2</span>
+          <h3>Receive your quote</h3>
+          <p>We measure the property and send a written quote for the material and openings you need.</p>
+        </li>
+        <li>
+          <span>3</span>
+          <h3>Schedule installation</h3>
+          <p>When you approve the quote, we schedule the crew and build the fence on your property.</p>
+        </li>
+      </ol>
+    </div>
+  </section>
 
-  <section class="section" style="padding-top: 0;">
+  <section class="section band-ink">
+    <div class="wrap">
+      <div class="section-head section-head-light">
+        <h2>Areas we serve</h2>
+        <p>Beaumont and nearby Southeast Texas communities we can measure in person.</p>
+      </div>
+      <ul class="town-chips">
+        {locations.map((location) => (
+          <li><a href={`/${location.slug}.html`}>{location.city}</a></li>
+        ))}
+      </ul>
+      <p class="towns-more"><a href="/service-areas.html">See all service areas</a></p>
+    </div>
+  </section>
+
+  <FaqList faqs={homeFaqs} heading="Frequently asked questions" tone="sand" />
+
+  <section class="section band-white">
     <div class="wrap">
       <div class="final">
-        <h2>Ready to price the line?</h2>
-        <p>Call {phoneDisplay} or send the form above. Include the city and a rough length so we can tell you what happens next.</p>
+        <h2>Ready for a free fence estimate?</h2>
+        <p>Tell us the city, the fence type if you know it, and about how long the line is. Or call {phoneDisplay} and talk it through.</p>
         <div class="actions">
           <a class="btn" href="#quote">Request a free quote</a>
-          <a class="btn btn-line" href="tel:+14092546532">Call {phoneDisplay}</a>
+          <a class="btn btn-line" href={`tel:${phoneTel}`}>Call {phoneDisplay}</a>
         </div>
       </div>
     </div>
