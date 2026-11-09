@@ -229,40 +229,6 @@ a.btn.header-cta { display: none; }
 }
 .hero .quote-card h2,
 .hero-slim .quote-card h2 { font-size: 1.55rem; margin-bottom: 0.35rem; }
-.hero-brand {
-  position: relative;
-  z-index: 1;
-  border-top: 1px solid rgba(255,255,255,.14);
-  background: rgba(8, 14, 11, 0.55);
-  backdrop-filter: blur(6px);
-}
-.hero-brand-inner {
-  min-height: 64px;
-  display: flex;
-  align-items: center;
-}
-.hero-logo {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.7rem;
-  color: white;
-  text-decoration: none;
-}
-.hero-logo svg { width: 40px; height: 40px; flex: none; }
-.hero-logo span { display: flex; flex-direction: column; line-height: 1.1; }
-.hero-logo strong {
-  font-family: var(--serif);
-  font-size: 1.05rem;
-  font-weight: 600;
-}
-.hero-logo em {
-  font-style: normal;
-  font-size: 0.72rem;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  color: #d9c7ae;
-  margin-top: 0.2rem;
-}
 .lede { font-size: 1.12rem; max-width: 44rem; }
 
 .section { padding: 4rem 0; }

@@ -1,6 +1,6 @@
 ---
 import QuoteForm from "./QuoteForm.astro";
-import { businessName, phoneDisplay, phoneTel } from "../data/site";
+import { phoneDisplay, phoneTel } from "../data/site";
 
 interface Props {
   title: string;
@@ -30,22 +30,5 @@ const {
       </div>
     </div>
     <QuoteForm embedded heading="Get a free quote" />
-  </div>
-  <div class="hero-brand">
-    <div class="wrap hero-brand-inner">
-      <a class="hero-logo" href="/" aria-label={`${businessName} home`}>
-        <svg viewBox="0 0 48 48" aria-hidden="true">
-          <rect width="48" height="48" rx="10" fill="#1B4332"></rect>
-          <path d="M8 38V20l5-7 5 7v18" stroke="#F3EDE3" stroke-width="2.4" stroke-linejoin="round"></path>
-          <path d="M19 38V16l5-7 5 7v22" stroke="#F3EDE3" stroke-width="2.4" stroke-linejoin="round"></path>
-          <path d="M30 38V22l5-7 5 7v16" stroke="#F3EDE3" stroke-width="2.4" stroke-linejoin="round"></path>
-          <path d="M7 38h34" stroke="#E07A3D" stroke-width="2.4" stroke-linecap="round"></path>
-        </svg>
-        <span>
-          <strong>JD's Fence Company</strong>
-          <em>Beaumont, TX</em>
-        </span>
-      </a>
-    </div>
   </div>
 </section>
