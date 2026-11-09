@@ -8,6 +8,8 @@ interface Props {
   eyebrow?: string;
   image?: string;
   imageAlt?: string;
+  imageWidth?: number;
+  imageHeight?: number;
 }
 const {
   title,
@@ -15,13 +17,25 @@ const {
   eyebrow,
   image = "/images/hero.jpg",
   imageAlt = "Fence installation project in Southeast Texas",
+  imageWidth = 2400,
+  imageHeight = 1350,
 } = Astro.props;
 ---
 
 <section class="page-hero hero-slim">
-  <img class="hero-media" src={image} alt={imageAlt} width="1800" height="1012" loading="eager" decoding="async" />
+  <img
+    class="hero-media"
+    src={image}
+    alt={imageAlt}
+    width={imageWidth}
+    height={imageHeight}
+    loading="eager"
+    decoding="async"
+    fetchpriority="high"
+  />
   <div class="wrap hero-grid hero-grid-slim">
     <div class="hero-copy">
+      {eyebrow && <p class="eyebrow">{eyebrow}</p>}
       <h1>{title}</h1>
       <p>{lede}</p>
       <div class="actions">

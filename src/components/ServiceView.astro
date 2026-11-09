@@ -26,9 +26,7 @@ const schema = pageSchema({
 });
 
 const estimate = "#quote";
-const others = services.filter((item) => item.slug !== service.slug);
-const second = others[(services.findIndex((item) => item.slug === service.slug)) % others.length];
-const relatedServices = others.slice(0, 4);
+const relatedServices = services.filter((item) => item.slug !== service.slug).slice(0, 4);
 ---
 
 <Base title={service.title} description={service.description} path={path} schema={schema}>
@@ -53,18 +51,26 @@ const relatedServices = others.slice(0, 4);
     eyebrow={service.name}
     image={service.image}
     imageAlt={service.imageAlt}
+    imageWidth={service.width}
+    imageHeight={service.height}
   />
 
   <section class="section band-white service-body">
     <div class="wrap service-layout">
       <div class="service-main">
         <div class="service-gallery">
-          <figure class="service-shot">
-            <img src={service.whenImage} alt={service.whenAlt} width={service.whenWidth} height={service.whenHeight} loading="lazy" decoding="async" />
-          </figure>
-          <figure class="service-shot">
-            <img src={second.image} alt={second.imageAlt} width={second.width} height={second.height} loading="lazy" decoding="async" />
-          </figure>
+          {service.gallery.map((shot) => (
+            <figure class="service-shot">
+              <img
+                src={shot.src}
+                alt={shot.alt}
+                width={shot.width}
+                height={shot.height}
+                loading="lazy"
+                decoding="async"
+              />
+            </figure>
+          ))}
         </div>
 
         <div class="service-copy">

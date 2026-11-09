@@ -6,7 +6,7 @@ import { services } from "../data/services";
   {services.map((service) => (
     <li>
       <a class="service-card" href={`/${service.slug}.html`}>
-        <img src={service.image} alt={service.imageAlt} width={service.width} height={service.height} />
+        <img src={service.gallery[0].src} alt={service.gallery[0].alt} width={service.gallery[0].width} height={service.gallery[0].height} loading="lazy" decoding="async" />
         <div class="service-card-body">
           <h3>{service.name}</h3>
           <p>{service.card}</p>
