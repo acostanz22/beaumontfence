@@ -6,7 +6,6 @@ import QuoteForm from "../components/QuoteForm.astro";
 import { pageSchema } from "../data/schema";
 import { businessName, homeFaqs, phoneDisplay, phoneTel } from "../data/site";
 import { locations } from "../data/locations";
-import { reviews } from "../data/reviews";
 
 const title = "Fence Company Beaumont TX | Vinyl Fence, Wood Fence, Aluminum Fence & More";
 const description =
@@ -19,15 +18,6 @@ const schema = pageSchema({
   crumbs,
   faqs: homeFaqs,
 });
-
-const gallery = [
-  { src: "/images/wood.jpg", alt: "Wood privacy fence along a residential yard", href: "/wood-fence.html", label: "Wood" },
-  { src: "/images/vinyl.jpg", alt: "White vinyl fence along a residential lawn", href: "/vinyl-fence.html", label: "Vinyl" },
-  { src: "/images/chain-link.jpg", alt: "Galvanized chain-link fence with metal posts", href: "/chain-link-fence.html", label: "Chain link" },
-  { src: "/images/aluminum.jpg", alt: "Black ornamental aluminum fence behind a hedge", href: "/aluminum-fence.html", label: "Aluminum" },
-  { src: "/images/farm.jpg", alt: "Wooden ranch rail fence along a grassy field", href: "/farm-fence.html", label: "Farm" },
-  { src: "/images/commercial.jpg", alt: "Chain-link fence for commercial yards and secure lots", href: "/commercial-fencing.html", label: "Commercial" },
-];
 ---
 
 <Base title={title} description={description} path="/" schema={schema}>
@@ -99,43 +89,6 @@ const gallery = [
         <p>Wood, vinyl, aluminum, chain link, farm, and commercial fencing with short descriptions, photos, and links to each page.</p>
       </div>
       <ServiceCards />
-    </div>
-  </section>
-
-  <section class="section band-paper">
-    <div class="wrap">
-      <div class="section-head">
-        <h2>Our Gallery</h2>
-        <p>Clear, consistently sized fence photos from our project library. The right layout still comes from measuring your lot.</p>
-      </div>
-      <div class="gallery gallery-6">
-        {gallery.map((item) => (
-          <a class="gallery-card" href={item.href}>
-            <img src={item.src} alt={item.alt} width="640" height="420" loading="lazy" decoding="async" />
-            <span>{item.label}</span>
-          </a>
-        ))}
-      </div>
-    </div>
-  </section>
-
-  <section class="section band-white">
-    <div class="wrap">
-      <div class="section-head">
-        <h2>Customer Reviews</h2>
-        <p>Recent feedback from customers who hired {businessName} for fence work around Beaumont.</p>
-      </div>
-      <ul class="review-grid">
-        {reviews.map((review) => (
-          <li class="review-card">
-            <p class="review-text">“{review.text}”</p>
-            <p class="review-meta">
-              <strong>{review.name}</strong>
-              <span>{review.source}</span>
-            </p>
-          </li>
-        ))}
-      </ul>
     </div>
   </section>
 
