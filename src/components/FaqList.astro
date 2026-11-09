@@ -6,12 +6,12 @@ interface Props {
   heading?: string;
   tone?: "paper" | "white" | "sand" | "sage" | "ink" | "mist";
 }
-const { faqs, heading = "Frequently asked questions", tone = "paper" } = Astro.props;
+const { faqs, heading = "Frequently Asked Questions", tone = "paper" } = Astro.props;
 const band = `section band-${tone}`;
 const light = tone === "ink";
 ---
 
-<section class={band}>
+<section class={band} id="faq">
   <div class="wrap narrow faq-wrap">
     <div class={`section-head${light ? " section-head-light" : ""}`}>
       <h2>{heading}</h2>
@@ -19,10 +19,10 @@ const light = tone === "ink";
     </div>
     <div class={`faq-list${light ? " faq-list-light" : ""}`}>
       {faqs.map((faq) => (
-        <article class="faq-item">
-          <h3>{faq.q}</h3>
+        <details class="faq-item">
+          <summary>{faq.q}</summary>
           <p>{faq.a}</p>
-        </article>
+        </details>
       ))}
     </div>
   </div>
