@@ -39,9 +39,9 @@ export const services: Service[] = [
     h1: "Wood Fence Installation in Beaumont, TX",
     card: "Privacy, picket, and rail fences for yards that want wood. Posts are set for the soil, and the gate is built for the opening.",
     image: "/images/wood-hero.jpg",
-    imageAlt: "Brown wooden privacy fence beside evergreen trees under a blue sky",
+    imageAlt: "New wooden privacy fence along a green lawn under a clear sky",
     width: 2400,
-    height: 1350,
+    height: 1843,
     gallery: [
       {
         src: "/images/wood.jpg",
